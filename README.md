@@ -7,6 +7,6 @@ Setup
 2. cd CandyGram
 3. npm install && bower install
 3. cd server
-4. Run node server.js 
+4. node server.js 
 5. cd..
-6. Run grunt serve
+6. grunt serve
