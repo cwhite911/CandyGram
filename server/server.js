@@ -1,5 +1,6 @@
 var express = require('express'),
 	bodyParser = require('body-parser'),
+	cors = require('cors'),
 	methodOverride = require('method-override'),
 	restful = require('node-restful'),
 	mongoose = restful.mongoose;
@@ -9,7 +10,7 @@ var app = express();
 
 	app.use(bodyParser.json());
 	app.use(methodOverride());
-
+	app.use(cors());
 
 mongoose.connect('mongodb://localhost/restful');
 
