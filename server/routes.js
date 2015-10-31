@@ -10,6 +10,7 @@ import path from 'path';
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/csv', require('./api/csv'));
   app.use('/api/geojson', require('./api/geojson'));
   app.use('/api/buffer', require('./api/buffer'));
   app.use('/api/import/shapefile', require('./api/shapefile'));
