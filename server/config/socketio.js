@@ -18,6 +18,9 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/geojson/geojson.socket').register(socket);
+  require('../api/buffer/buffer.socket').register(socket);
+  require('../api/shapefile/shapefile.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 
 }
