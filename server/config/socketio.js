@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/intersect/intersect.socket').register(socket);
   require('../api/csv/csv.socket').register(socket);
   require('../api/geojson/geojson.socket').register(socket);
   require('../api/buffer/buffer.socket').register(socket);
