@@ -46,7 +46,7 @@ module.exports = function(socketio) {
   socketio.on('connection', function(socket) {
     socket.address = socket.request.connection.remoteAddress +
       ':' + socket.request.connection.remotePort;
-
+      socket.setMaxListeners(20);
     socket.connectedAt = new Date();
 
     socket.log = function(...data) {

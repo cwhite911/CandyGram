@@ -59,9 +59,29 @@ function removeEntity(res) {
   };
 }
 
+function setData(res) {
+  var data = [
+    {
+      x: [],
+      y: [],
+      z: [],
+      type: 'surface'
+    }
+  ];
+  res.forEach(function(i) {
+    // console.log(i.Y)
+    data[0].x.push(i._doc.X);
+    data[0].y.push(i._doc.Y);
+    data[0].z.push(i._doc.Z);
+  });
+
+  return data;
+}
+
 // Gets a list of Things
 exports.index = function(req, res) {
-  Thing.findAsync()
+  Thing.find().limit(100000).execAsync()
+    .then(setData)
     .then(responseWithResult(res))
     .catch(handleError(res));
 };

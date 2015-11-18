@@ -3,10 +3,10 @@
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 var Schema = mongoose.Schema;
 
-var ThingSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+var LidarSchema = new Schema({
+  x: Number,
+  y: Number,
+  z: Number
 });
 
-module.exports = mongoose.model('Thing', ThingSchema);
+module.exports = mongoose.model('Lidar', LidarSchema, 'lidar');

@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/candygram-dev'
+    uri: 'mongodb://localhost/candygram'
   },
   sequelize: {
     uri: 'sqlite://',
